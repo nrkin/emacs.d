@@ -64,9 +64,9 @@
 
 
 ;; Initialize yasnippets
-(yas/initialize)
+(yas--initialize)
 (setq yas/root-directory (concat root-dir "snippets"))
-(yas/load-directory yas/root-directory)
+(yas-load-directory yas/root-directory)
 
 
 ;; Initialize Git-gutter
