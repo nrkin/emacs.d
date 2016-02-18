@@ -1,5 +1,5 @@
-(setq user-full-name "Prajwalit Bhopale")
-(setq user-mail-address "contact@prajwalit.com")
+(setq user-full-name "Nachiket Kakatkar")
+(setq user-mail-address "nachiketkakatkar@gmail.com")
 
 ;; Setup folders
 (setq root-dir (file-name-directory
