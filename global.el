@@ -18,7 +18,7 @@
 
 ;; Set up ace-jump-mode
 (autoload 'ace-jump-mode
-                         "ace-jump-mode"
+  "ace-jump-mode"
   "Emacs quick move minor mode"
   t)
 
@@ -64,9 +64,8 @@
 
 
 ;; Initialize yasnippets
-(yas--initialize)
-(setq yas/root-directory (concat root-dir "snippets"))
-(yas-load-directory yas/root-directory)
+(setq yas-snippet-dirs (concat root-dir "snippets"))
+(yas-global-mode 1)
 
 
 ;; Initialize Git-gutter
