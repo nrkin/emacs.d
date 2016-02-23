@@ -1,6 +1,8 @@
 (require 'yasnippet)
 (require 'git-gutter)
 (require 'smartparens-config)
+(require 'rich-minority)
+(require 'smooth-scroll)
 
 
 ;; Load default auto-complete configs
@@ -74,3 +76,25 @@
  '(git-gutter:modified-sign "=")
  '(git-gutter:added-sign "+")
  '(git-gutter:deleted-sign "-"))
+
+
+;; Set rich minority mode
+(setq rm-blacklist '(" ARev"
+                     " AC"
+                     " GitGutter"
+                     " Undo-Tree"
+                     " SP/s"
+                     " SScr"
+                     " yas"))
+(rich-minority-mode 1)
+
+
+;; Start smooth-scrolling
+(smooth-scroll-mode t)
+(setq mouse-wheel-progressive-speed nil)
+(setq mouse-wheel-follow-mouse 't)
+(setq scroll-step 1)
+
+
+;; Mode-specific scratch buffers
+(autoload 'scratch "scratch" nil t)
