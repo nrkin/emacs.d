@@ -1,11 +1,14 @@
 (require 'web-mode)
+(require 'smartparens)
 (require 'smartparens-utils)
+(require 'idle-highlight-mode)
 
 (eval-after-load 'web-mode
   '(progn (setq web-mode-code-indent-offset 2)
           (setq web-mode-markup-indent-offset 2)
           (setq web-mode-indent-style 2)
           (setq web-mode-enable-auto-quoting nil)
+          (setq web-mode-enable-auto-closing nil)
           (font-lock-add-keywords
            'web-mode `(("\\(function\s\\)("
                         (0 (progn (compose-region (match-beginning 1)
@@ -23,8 +26,9 @@
         '(("css" . (ac-source-words-in-buffer ac-source-css-property))
           ("html" . (ac-source-words-in-buffer ac-source-abbrev))
           ("jsx" . (ac-source-words-in-buffer ac-source-words-in-same-mode-buffers))
-          ("js" . (ac-source-words-in-buffer ac-source-words-in-same-mode-buffers)))))
-
+          ("js" . (ac-source-words-in-buffer ac-source-words-in-same-mode-buffers))))
+  (idle-highlight-mode t)
+  (sp-local-pair 'web-mode "<" nil :actions :rem))
 
 (add-hook 'web-mode-hook 'web-mode-hook)
 

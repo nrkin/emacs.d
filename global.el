@@ -3,6 +3,7 @@
 (require 'smartparens-config)
 (require 'rich-minority)
 (require 'smooth-scroll)
+(require 'deft)
 
 
 ;; Load default auto-complete configs
@@ -79,14 +80,14 @@
 
 
 ;; Set rich minority mode
-(setq rm-blacklist '(" ARev"
-                     " AC"
-                     " GitGutter"
-                     " Undo-Tree"
-                     " SP/s"
-                     " SScr"
-                     " yas"))
-(rich-minority-mode 1)
+;; (setq rm-blacklist '(" ARev"
+;;                      " AC"
+;;                      " GitGutter"
+;;                      " Undo-Tree"
+;;                      " SP/s"
+;;                      " SScr"
+;;                      " yas"))
+;; (rich-minority-mode 1)
 
 
 ;; Start smooth-scrolling
@@ -98,3 +99,11 @@
 
 ;; Mode-specific scratch buffers
 (autoload 'scratch "scratch" nil t)
+
+;; Deft
+(setq deft-default-extension "md"
+      deft-extensions '("md" "org" "txt")
+      deft-directory "~/Google Drive/notes"
+      deft-auto-save-interval 0)
+(unless (file-exists-p deft-directory)
+  (make-directory deft-directory))

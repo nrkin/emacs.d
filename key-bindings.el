@@ -1,6 +1,7 @@
 (require 'yasnippet)
 (require 'smartparens)
 (require 'ace-jump-mode)
+(require 'neotree)
 
 ;; Revert
 (global-set-key (kbd "<f5>") 'revert-buffer)
@@ -31,12 +32,16 @@
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
 ;; Zooming
-(define-key global-map (kbd "C-+") 'text-scale-increase)
-(define-key global-map (kbd "C--") 'text-scale-decrease)
+(global-set-key (kbd "C-+") 'text-scale-increase)
+(global-set-key (kbd "C--") 'text-scale-decrease)
+
+;; Open in other window
+(global-set-key (kbd "C-c f") 'find-file-other-window)
+(global-set-key (kbd "C-c b") 'view-buffer-other-window)
 
 ;; Ace jump bindings
-(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
-(define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
+(global-set-key (kbd "C-c SPC") 'ace-jump-mode)
+(global-set-key (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
 
 ;; Yas bindings
 (define-key yas-minor-mode-map (kbd "<tab>") nil)
@@ -47,9 +52,21 @@
 ;; Smartparens
 (define-key smartparens-mode-map (kbd "C-M-<backspace>") 'sp-splice-sexp-killing-backward)
 
-
 ;; Alignment
 (global-set-key (kbd "C-M-;")
                 (lambda (b e)
                   (interactive "r")
                   (align-regexp b e "\\(\\s-*\\):" 1 1)))
+
+;; Switch to the most recently selected buffer
+(global-set-key (kbd "M-`") 'mode-line-other-buffer)
+
+;; Neotree
+(global-set-key (kbd "M-]") 'neotree-toggle)
+
+;; Scratch
+(global-set-key (kbd "C-x t") 'scratch)
+
+;; Deft
+(global-set-key (kbd "C-x /") 'deft)
+(global-set-key (kbd "C-x m") 'deft-new-file-named)

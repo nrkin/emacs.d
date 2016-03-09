@@ -28,6 +28,9 @@
     rich-minority
     smooth-scroll
     scratch
+    idle-highlight-mode
+    neotree
+    deft
 
     ;; Programming
     web-mode
