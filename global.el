@@ -4,6 +4,7 @@
 (require 'rich-minority)
 (require 'smooth-scroll)
 (require 'deft)
+(require 'window-number)
 
 
 ;; Load default auto-complete configs
@@ -107,3 +108,6 @@
       deft-auto-save-interval 0)
 (unless (file-exists-p deft-directory)
   (make-directory deft-directory))
+
+;; Select windows using M- and a number
+(window-number-meta-mode 1)

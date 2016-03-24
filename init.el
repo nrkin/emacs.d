@@ -18,4 +18,5 @@
 (load-file (concat root-dir "key-bindings.el"))
 (load-file (concat root-dir "system.el"))
 (load-file (concat root-dir "global.el"))
+(load-file (concat root-dir "utils.el"))
 (load-file (concat config-dir "init.el"))

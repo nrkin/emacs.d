@@ -31,6 +31,7 @@
     idle-highlight-mode
     neotree
     deft
+    window-number
 
     ;; Programming
     web-mode
